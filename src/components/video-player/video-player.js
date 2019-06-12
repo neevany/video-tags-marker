@@ -11,7 +11,6 @@ class VideoPlayer extends Component {
     this.videoPlayer = React.createRef();
   }
   seekTo(time) {
-    debugger;
     this.videoPlayer.current.seek(time);
   }
   render() {
@@ -21,6 +20,7 @@ class VideoPlayer extends Component {
         <Player ref={this.videoPlayer} src={this.props.src} autoPlay>
           <ControlBar autoHide={false}>
             <TagsToggle
+              videoPlayer={this.videoPlayer}
               metaTags={this.props.videoMetaTags}
               order={7}
               seekTo={time => this.seekTo(time)}
@@ -32,7 +32,7 @@ class VideoPlayer extends Component {
           <li>
             <h4>
               Click on the &nbsp;
-              <Icon icon="list-columns" large />
+              <Icon icon="list-columns" />
               &nbsp; Icon to view the video tags marker mode
             </h4>
           </li>

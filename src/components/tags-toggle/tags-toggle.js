@@ -38,6 +38,10 @@ export default class TagsToggle extends Component {
           })}
         >
           <TagsMarker
+            duration={
+              this.props.videoPlayer.current &&
+              this.props.videoPlayer.current.getState().player.duration
+            }
             seekTo={time => this.props.seekTo(time)}
             metaTags={this.props.metaTags}
           />

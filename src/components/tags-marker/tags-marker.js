@@ -41,8 +41,9 @@ class TagsMarker extends Component {
                     onClick={() => this.props.seekTo(time.start)}
                     style={{
                       position: 'absolute',
-                      width: `${((time.end - time.start) * 100) / 83}%`,
-                      left: `${(time.start * 100) / 83}%`,
+                      width: `${((time.end - time.start) * 100) /
+                        this.props.duration}%`,
+                      left: `${(time.start * 100) / this.props.duration}%`,
                       background: `#${this.state.colors[tagIndex]}`,
                     }}
                   />
