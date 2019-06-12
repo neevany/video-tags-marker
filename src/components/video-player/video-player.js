@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Player, ControlBar } from 'video-react';
+import { Icon } from '@blueprintjs/core';
 import TagsToggle from '../tags-toggle/tags-toggle';
 import style from './video-player.less';
 
@@ -26,6 +27,19 @@ class VideoPlayer extends Component {
             />
           </ControlBar>
         </Player>
+        <br />
+        <ul>
+          <li>
+            <h4>
+              Click on the &nbsp;
+              <Icon icon="list-columns" large />
+              &nbsp; Icon to view the video tags marker mode
+            </h4>
+          </li>
+          <li>
+            <h4>Click on the tags marker to seek to that time</h4>
+          </li>
+        </ul>
       </div>
     );
   }
